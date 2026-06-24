@@ -40,7 +40,7 @@ class PlayerManager():
         performance_type = Player.classify_performance
         player = Player(id, name, speed_score, technique_score, goal_score, average_score, performance_type )
         self.players.append(player)
-        print("Thêm cầu thủ thành công !!!")
+        print("Thêm cầu thủ thành công !!!")-
         
 
     def show_all(self):
@@ -53,14 +53,14 @@ class PlayerManager():
     def update_player(self):
         update_id = input("Mời bạn nhập id cầu thủ cần cập nhật: ")
         for player in self.players:
-            if player[id] == update_id:
+            if player.id == update_id:
                 new_speed_score = input("Mời bạn nhập chỉ số tốc độ mới: ")
                 new_technique_score = input("Mời bạn nhập chỉ số kĩ thuật mới: ")
                 new_goal_score = input("Mời bạn nhập chỉ số ghi bàn mới: ")
 
-                player[speed_score] = new_speed_score
-                player[technique_score] = new_technique_score
-                player[goal_score] = new_goal_score
+                player.speed_score = new_speed_score
+                player.technique_score = new_technique_score
+                player.goal_score = new_goal_score
             
         else:
             print("Không tìm thấy cầu thủ có id: ", update_id)
@@ -69,7 +69,7 @@ class PlayerManager():
     def delete_player(self):
         del_id = input("Mời bạn nhập id cầu thủ cần xóa: ")
         for player in self.players:
-            if player[id] == del_id:
+            if player.id == del_id:
                 choice_del = input("Bạn có chắc muốn xóa cầu thủ này không? (Y/N)")
                 if choice_del == 'Y':
                     self.players.remove(player)
